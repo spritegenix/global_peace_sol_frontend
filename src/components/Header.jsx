@@ -1,0 +1,60 @@
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
+
+const Header = () => {
+    const { user, logout } = useAuth();
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        logout();
+        navigate('/');
+    };
+    return (
+        <header className="sticky top-0 z-50 w-full border-b border-primary/20 bg-background-light/80 backdrop-blur-md dark:bg-background-dark/80">
+            <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+               <Link to="/" className="flex items-center gap-2">
+    <div className="flex items-center justify-center">
+        <img 
+            src='/1.png' 
+            alt='logo' 
+            className='h-8 w-auto object-contain' 
+        /> 
+    </div>
+
+    
+</Link>
+                <nav className="hidden md:flex items-center gap-8">
+                    <Link className="text-sm font-semibold hover:text-primary transition-colors" to="/">Home</Link>
+                    <Link className="text-sm font-semibold hover:text-primary transition-colors" to="/categories">Categories</Link>
+                    {user && <Link className="text-sm font-semibold hover:text-primary transition-colors" to="/directory">Directory</Link>}
+                </nav>
+                <div className="flex items-center gap-4">
+                    {user ? (
+                        <>
+                            <Link to="/add-business" className="hidden sm:block text-sm font-semibold hover:text-primary">
+                                List a Business
+                            </Link>
+                            {user.role === 'admin' && (
+                                <Link to="/admin" className="text-sm font-semibold text-rose-500 hover:text-rose-600">
+                                    Admin Dashboard
+                                </Link>
+                            )}
+                            <Link to="/profile" className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors group">
+                                <span className="material-symbols-outlined text-slate-600 dark:text-slate-400 group-hover:text-slate-900">person</span>
+                            </Link>
+                            <button onClick={handleLogout} className="text-sm font-semibold text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">
+                                Logout
+                            </button>
+                        </>
+                    ) : (
+                        <Link to="/auth" className="flex h-10 items-center justify-center rounded-lg bg-primary px-6 text-sm font-bold text-slate-900 transition-transform hover:scale-105 active:scale-95">
+                            Login
+                        </Link>
+                    )}
+                </div>
+            </div>
+        </header>
+    );
+};
+
+export default Header;
