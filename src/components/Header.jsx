@@ -12,19 +12,22 @@ const Header = () => {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-primary/20 bg-background-light/80 backdrop-blur-md dark:bg-background-dark/80">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-               <Link to="/" className="flex items-center gap-2">
-    <div className="flex items-center justify-center">
-        <img 
-            src='/1.png' 
-            alt='logo' 
-            className='h-8 w-auto object-contain' 
-        /> 
-    </div>
+                <Link to="/" className="flex items-center gap-2">
+                    <div className="flex items-center justify-center">
+                        <img
+                            src='/1.png'
+                            alt='logo'
+                            className='h-8 w-auto object-contain'
+                        />
+                    </div>
 
-    
-</Link>
+
+                </Link>
                 <nav className="hidden md:flex items-center gap-8">
-                    <Link className="text-sm font-semibold hover:text-primary transition-colors" to="/">Home</Link>
+
+                    <Link className="text-sm font-semibold hover:text-primary transition-colors" to="/about-us">About Us</Link>
+                     <Link className="text-sm font-semibold hover:text-primary transition-colors" to="/advertise">Advertise with Us</Link>
+                    <Link className="text-sm font-semibold hover:text-primary transition-colors" to="/contact">Contact</Link>
                     <Link className="text-sm font-semibold hover:text-primary transition-colors" to="/categories">Categories</Link>
                     {user && <Link className="text-sm font-semibold hover:text-primary transition-colors" to="/directory">Directory</Link>}
                 </nav>

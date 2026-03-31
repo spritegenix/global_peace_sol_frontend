@@ -11,6 +11,9 @@ import Auth from './pages/Auth';
 import AdminDashboard from './pages/AdminDashboard';
 import Profile from './pages/Profile';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import AboutUs from './pages/AboutUs';
+import Contact from './pages/Contact';
+import Advertise from './pages/Advertise';
 
 // Components
 import Header from './components/Header';
@@ -47,6 +50,9 @@ function App() {
               <main className="flex-1">
                 <Routes>
                   <Route path="/" element={<Home />} />
+                  <Route path="/about-us" element={<AboutUs />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/advertise" element={<Advertise />} />
                   <Route path="/categories" element={<Categories />} />
                   <Route path="/directory" element={<Directory />} />
                   <Route path="/business/:id" element={<BusinessDetails />} />

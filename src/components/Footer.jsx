@@ -22,19 +22,18 @@ const Footer = () => {
                     <div>
                         <h3 className="font-bold text-slate-900 dark:text-white">For Users</h3>
                         <ul className="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                            <li><Link className="hover:text-primary" to="/about-us">About Us</Link></li>
+                            <li><Link className="hover:text-primary" to="/contact">Contact</Link></li>
                             <li><Link className="hover:text-primary" to="/categories">Search Categories</Link></li>
-                            <li><Link className="hover:text-primary" to="#">Download App</Link></li>
-                            <li><Link className="hover:text-primary" to="#">User Reviews</Link></li>
-                            <li><Link className="hover:text-primary" to="#">Help Center</Link></li>
+
                         </ul>
                     </div>
                     <div>
                         <h3 className="font-bold text-slate-900 dark:text-white">For Businesses</h3>
                         <ul className="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-400">
                             <li><Link className="hover:text-primary" to="/add-business">Add Listing</Link></li>
-                            <li><Link className="hover:text-primary" to="#">Advertise with Us</Link></li>
-                            <li><Link className="hover:text-primary" to="#">Success Stories</Link></li>
-                            <li><Link className="hover:text-primary" to="#">Merchant Support</Link></li>
+                            <li><Link className="hover:text-primary" to="/advertise">Advertise with Us</Link></li>
+
                         </ul>
                     </div>
                     <div>
